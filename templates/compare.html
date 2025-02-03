@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Compare Mobiles{% endblock %}
+
+{% block content %}
+    <h2 class="text-center text-success">📊 Mobile Comparison</h2>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>{{ phone1["Brand"] }} {{ phone1["Model Name"] }}</th>
+                <th>{{ phone2["Brand"] }} {{ phone2["Model Name"] }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key in phone1.keys() %}
+            <tr>
+                <th>{{ key }}</th>
+                <td>{{ phone1[key] }}</td>
+                <td>{{ phone2[key] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/" class="btn btn-primary">🔄 Compare Another</a>
+{% endblock %}
