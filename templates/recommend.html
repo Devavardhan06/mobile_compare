@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Recommended Mobiles{% endblock %}
+
+{% block content %}
+    <h2 class="text-center text-success">📱 Best Mobile Recommendations</h2>
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Price (₹)</th>
+                <th>Battery (mAh)</th>
+                <th>Camera (MP)</th>
+                <th>Processor</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mobile in recommendations %}
+            <tr>
+                <td>{{ mobile["Brand"] }}</td>
+                <td>{{ mobile["Model Name"] }}</td>
+                <td>{{ mobile["Price"] }}</td>
+                <td>{{ mobile["Battery Capacity"] }}</td>
+                <td>{{ mobile["Primary Camera"] }}</td>
+                <td>{{ mobile["Processor Type"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/" class="btn btn-primary">🔄 Search Again</a>
+{% endblock %}
